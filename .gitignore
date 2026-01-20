@@ -47,3 +47,4 @@ test.db
 # API Keys 配置文件（包含敏感信息）
 api_keys.json
 .venv
+api key.txt
