@@ -1,0 +1,18 @@
+[
+  {
+    "shot_id": "01",
+    "t2i_prompt": "A detailed video about a brown macaque in the jungle, based on the provided reference image. The video will have four shots: 1. A wide shot with a fixed camera, showing a brown macaque jumping down from a vine and crouching on the ground, looking around alertly. 2. A close-up shot following the macaque as it launches forward, running with alternating limbs, tail straight for balance. 3. A close-up shot of the macaque's paw touching the ground, with its toes gripping the pebbles. 4. A wide shot with a panning camera, showing the macaque running along the path, leaping over roots and dodging bushes.\n\nThis is shot 01: A wide shot with a fixed camera, showing a brown macaque jumping down from a vine and crouching on the ground, looking around alertly. The clip duration for this shot is about 4 seconds."
+  },
+  {
+    "shot_id": "02",
+    "t2i_prompt": "A detailed video about a brown macaque in the jungle, based on the provided reference image. The video will have four shots: 1. A wide shot with a fixed camera, showing a brown macaque jumping down from a vine and crouching on the ground, looking around alertly. 2. A close-up shot following the macaque as it launches forward, running with alternating limbs, tail straight for balance. 3. A close-up shot of the macaque's paw touching the ground, with its toes gripping the pebbles. 4. A wide shot with a panning camera, showing the macaque running along the path, leaping over roots and dodging bushes.\n\nThis is shot 02: A close-up shot following the macaque as it launches forward, running with alternating limbs, tail straight for balance. The clip duration for this shot is about 3 seconds."
+  },
+  {
+    "shot_id": "03",
+    "t2i_prompt": "A detailed video about a brown macaque in the jungle, based on the provided reference image. The video will have four shots: 1. A wide shot with a fixed camera, showing a brown macaque jumping down from a vine and crouching on the ground, looking around alertly. 2. A close-up shot following the macaque as it launches forward, running with alternating limbs, tail straight for balance. 3. A close-up shot of the macaque's paw touching the ground, with its toes gripping the pebbles. 4. A wide shot with a panning camera, showing the macaque running along the path, leaping over roots and dodging bushes.\n\nThis is shot 03: A close-up shot of the macaque's paw touching the ground, with its toes gripping the pebbles. The clip duration for this shot is about 2 seconds."
+  },
+  {
+    "shot_id": "04",
+    "t2i_prompt": "A detailed video about a brown macaque in the jungle, based on the provided reference image. The video will have four shots: 1. A wide shot with a fixed camera, showing a brown macaque jumping down from a vine and crouching on the ground, looking around alertly. 2. A close-up shot following the macaque as it launches forward, running with alternating limbs, tail straight for balance. 3. A close-up shot of the macaque's paw touching the ground, with its toes gripping the pebbles. 4. A wide shot with a panning camera, showing the macaque running along the path, leaping over roots and dodging bushes.\n\nThis is shot 04: A wide shot with a panning camera, showing the macaque running along the path, leaping over roots and dodging bushes. The clip duration for this shot is about 5 seconds."
+  }
+]

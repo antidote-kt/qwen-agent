@@ -1,0 +1,18 @@
+[
+  {
+    "shot_id": "01",
+    "t2i_prompt": "猴子的形象需要完全按照上传的图片来：C:\\Users\\liuww\\AppData\\Local\\Temp\\gradio\\24ccccf2c4a1f72b2b5cd623175ee26b878f481b868cff2e8da52737b75f44c6\\生成人物三视图.png\n\nThis is shot 01: 清晨的丛林小径，落叶与碎石铺地，阳光斜切过画面。一只棕黄色的猕猴从左侧树藤上跃下，四肢着地蹲伏片刻，黑亮的眼睛警惕地扫视四周。 The clip duration for this shot is about 3 seconds."
+  },
+  {
+    "shot_id": "02",
+    "t2i_prompt": "猴子的形象需要完全按照上传的图片来：C:\\Users\\liuww\\AppData\\Local\\Temp\\gradio\\24ccccf2c4a1f72b2b5cd623175ee26b878f481b868cff2e8da52737b75f44c6\\生成人物三视图.png\n\nThis is shot 02: 猕猴后腿蹬地发力，身体向前弹射而出。跑步时四肢交替摆动，前爪微微抬起，后肢肌肉线条紧绷，尾巴笔直竖起保持平衡。 The clip duration for this shot is about 4 seconds."
+  },
+  {
+    "shot_id": "03",
+    "t2i_prompt": "猴子的形象需要完全按照上传的图片来：C:\\Users\\liuww\\AppData\\Local\\Temp\\gradio\\24ccccf2c4a1f72b2b5cd623175ee26b878f481b868cff2e8da52737b75f44c6\\生成人物三视图.png\n\nThis is shot 03: 猕猴的脚掌落地，肉垫轻触碎石，脚趾灵活抓地防止打滑。毛发被风吹起，贴在脖颈处。 The clip duration for this shot is about 2 seconds."
+  },
+  {
+    "shot_id": "04",
+    "t2i_prompt": "猴子的形象需要完全按照上传的图片来：C:\\Users\\liuww\\AppData\\Local\\Temp\\gradio\\24ccccf2c4a1f72b2b5cd623175ee26b878f481b868cff2e8da52737b75f44c6\\生成人物三视图.png\n\nThis is shot 04: 猕猴沿着小径加速奔跑，时而跃过凸起的树根，时而侧身闪过低矮的灌木丛。阳光在它身上跳跃，留下快速移动的光斑。 The clip duration for this shot is about 5 seconds."
+  }
+]

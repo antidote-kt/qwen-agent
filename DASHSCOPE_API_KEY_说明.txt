@@ -1,0 +1,33 @@
+DASHSCOPE_API_KEY 使用说明（方案一：Windows 用户环境变量）
+
+一、一次性设置默认 API Key（当前用户）
+
+在 PowerShell 中执行（只需执行一次）：
+
+    [System.Environment]::SetEnvironmentVariable("DASHSCOPE_API_KEY", "你的_DashScope_API_Key", "User")
+
+执行后，关闭当前 PowerShell 窗口并重新打开。之后在任意该用户的 PowerShell 会话中运行本项目示例时，都会自动读取这个环境变量。
+
+二、修改默认 API Key
+
+如果需要更换为新的 Key，在 PowerShell 中再次执行同样的命令即可覆盖旧值：
+
+    [System.Environment]::SetEnvironmentVariable("DASHSCOPE_API_KEY", "新的_API_Key", "User")
+
+同样需要重新打开 PowerShell 窗口后生效。
+
+三、取消（删除）默认 API Key
+
+如果不想再使用这个默认的 Key，可以在 PowerShell 中将其删除：
+
+    [System.Environment]::SetEnvironmentVariable("DASHSCOPE_API_KEY", $null, "User")
+
+然后重新打开 PowerShell。之后如果不再在会话中手动设置 `$env:DASHSCOPE_API_KEY`，本项目调用 DashScope 时会提示未找到 API Key。
+
+四、仅在当前会话中临时覆盖 Key（可选）
+
+不改变用户级默认设置的情况下，你也可以在当前 PowerShell 会话中临时指定一个 Key：
+
+    $env:DASHSCOPE_API_KEY = "临时_API_Key"
+
+该设置只在当前窗口有效，关闭窗口后会恢复为用户级环境变量中的值（如果存在的话）。

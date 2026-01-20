@@ -1,0 +1,66 @@
+1. DashScope / 通义千问相关（同一个 Key）
+
+这些都用的是阿里云 DashScope，一个 API Key 搞定（代码里统一用环境变量 DASHSCOPE_API_KEY）：
+
+文本大模型（Prompt 精修、分镜规划）
+
+调用位置：
+assistant_video_gen.py 里 MyKeyframePlanner.call：
+dashscope.Generation.call("qwen-max", ...)
+用途：
+把全局英文 prompt 切成若干 shot（id / description / duration）。
+Key：
+从环境变量 DASHSCOPE_API_KEY 读取（你已经在别处配置过）。
+图像生成（关键帧图片）
+
+调用位置：
+assistant_video_gen.py 里 MyKeyframePlanner.call：
+ImageSynthesis.call(model=ImageSynthesis.Models.wanx_v1, ...)
+用途：
+每个分镜生成一张 keyframe 图，作为后续图生视频参考图。
+Key：
+同样走 DashScope SDK，用的也是 DASHSCOPE_API_KEY。
+文生 / 图生视频（万相 2.1）
+
+调用位置：
+video_generator.py 里的 sample_async_call：
+VideoSynthesis.async_call(model='wanx2.1-t2v-plus' / 'wanx2.1-i2v-plus', ...)
+VideoSynthesis.fetch(...) 轮询任务状态
+assistant_video_gen.py 里的 MyVideoGen.call 最终都调用 sample_async_call(...)。
+用途：
+文生：没有 input_img_url 时按 prompt 直接出视频；
+图生：有 keyframe_url 时按图+文生成该分镜的短视频。
+Key：
+sample_async_call 内部先检查 dashscope.api_key，若为空则从环境变量 DASHSCOPE_API_KEY 读取。
+多模态视频理解（参考视频分析）
+
+调用位置：
+video_downloader.py：
+call_multimodal_local_video 中：MultiModalConversation.call(api_key=api_key, model='qwen3-vl-plus', ...)
+封装成 process_url_and_call_model，被 VideoScriptAnalyzer 调用。
+用途：
+对下载到本地的 video.mp4 调用多模态模型，按 PROMPT_ANALYSIS_TEMPLATE 输出脚本/分镜/爆款元素等 JSON。
+Key：
+参数 api_key 为空时，会从 DASHSCOPE_API_KEY 环境变量读取；
+所以这里同样用 DashScope 的那一个 Key。
+总结：
+
+所有 DashScope 相关（qwen-max 文本、Wanx 图像、Wanx 视频、qwen3-vl-plus 多模态）共用 一个 DashScope API Key，你只要在运行环境里设置好：
+Windows PowerShell 示例：$env:DASHSCOPE_API_KEY = '你的 DashScope Key'
+2. Shotstack 云剪辑（单独的 Shotstack API Key）
+
+调用位置：
+video_cut.py：
+常量：SHOTSTACK_API_KEY = 'HKx7r3s09lpwUEGHXUzPngPLjNmWtSBAoUF1NOib'
+通过 requests.post(RENDER_URL, headers={"x-api-key": SHOTSTACK_API_KEY, ...}) 提交剪辑任务，并轮询状态。
+工具名：video_editor，被 assistant_video_gen 导入和注册，在“高级剪辑”分支使用。
+用途：
+把若干片段 URL（video_urls）加上可选 music_url，构建一个 timeline，走 Shotstack 云端渲染，输出一个合成视频 URL。
+Key：
+使用的是 Shotstack 自己的 API Key，与 DashScope 完全无关。
+目前是直接在代码里写死在 SHOTSTACK_API_KEY 常量中。真实使用时，你最好改成从环境变量读取，例如：
+SHOTSTACK_API_KEY = os.getenv("SHOTSTACK_API_KEY", "") 。
+3. 下载与系统工具（不需要 API Key）
+
+这些是本地工具或开源库，不需要 Key，只要安装即可：
+

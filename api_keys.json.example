@@ -1,0 +1,7 @@
+{
+    "DASHSCOPE_API_KEY": "你的_DashScope_API_Key",
+    "SHOTSTACK_API_KEY": "你的_Shotstack_API_Key",
+    "APIMART_API_KEY": "你的_APIMart_API_Key（可选）",
+    "IMGBB_API_KEY": "你的_ImgBB_API_Key（可选）"
+}
+
